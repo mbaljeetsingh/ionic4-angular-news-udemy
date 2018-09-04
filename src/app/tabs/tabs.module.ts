@@ -7,9 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
-import { ContactPageModule } from '../contact/contact.module';
-import { AboutPageModule } from '../about/about.module';
-import { HomePageModule } from '../home/home.module';
+import { TopNewsPageModule } from '../top-news/top-news.module';
+import { HeadlinesPageModule } from '../headlines/headlines.module';
+import { SourcesPageModule } from '../sources/sources.module';
+import { FavoritesPageModule } from '../favorites/favorites.module';
+import { SettingsPageModule } from '../settings/settings.module';
 
 @NgModule({
   imports: [
@@ -17,9 +19,11 @@ import { HomePageModule } from '../home/home.module';
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    HomePageModule,
-    AboutPageModule,
-    ContactPageModule
+    TopNewsPageModule,
+    HeadlinesPageModule,
+    SourcesPageModule,
+    FavoritesPageModule,
+    SettingsPageModule
   ],
   declarations: [TabsPage]
 })
