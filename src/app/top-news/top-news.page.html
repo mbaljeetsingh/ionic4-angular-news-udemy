@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>top-news</ion-title>
+    <ion-title>Top News</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+        <ion-card>
+          <ion-img src="/assets/dummy.jpg"></ion-img>
+
+          <ion-card-content>
+            <ion-card-title>Hello World</ion-card-title>
+
+            <p>The content for this card</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
