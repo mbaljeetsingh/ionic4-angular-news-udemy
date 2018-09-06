@@ -12,7 +12,7 @@ export class TopNewsPage implements OnInit {
   constructor(private newsService: NewsService) {}
 
   ngOnInit() {
-    this.news = this.newsService.getData('top-headlines?country=us&');
+    this.news = this.newsService.getData('top-headlines?country=us');
     // this.newsService.getData('top-headlines?country=us&').subscribe(data => {
     //   this.news = data;
     //   console.log(data);
