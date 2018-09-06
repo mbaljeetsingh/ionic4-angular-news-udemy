@@ -7,14 +7,14 @@
 <ion-content padding>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+      <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of news?.articles">
         <ion-card>
-          <ion-img src="/assets/dummy.jpg"></ion-img>
+          <ion-img [src]="item.urlToImage"></ion-img>
 
           <ion-card-content>
-            <ion-card-title>Hello World</ion-card-title>
+            <ion-card-title>{{item.title}}</ion-card-title>
 
-            <p>The content for this card</p>
+            <!-- <p>The content for this card</p> -->
           </ion-card-content>
         </ion-card>
       </ion-col>
