@@ -7,9 +7,9 @@
 <ion-content padding>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of news?.articles">
+      <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of (news | async)?.articles">
         <ion-card>
-          <ion-img [src]="item.urlToImage"></ion-img>
+          <ion-img *ngIf="item.urlToImage" [src]="item.urlToImage"></ion-img>
 
           <ion-card-content>
             <ion-card-title>{{item.title}}</ion-card-title>
