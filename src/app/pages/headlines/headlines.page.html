@@ -10,7 +10,7 @@
       <ion-col>
         <ion-slides>
           <ion-slide>
-            <ion-chip color="primary" class="category" *ngFor="let category of categories">
+            <ion-chip color="primary" class="category" *ngFor="let category of categories" (click)="onGetCategoryData(category)">
               <ion-label>{{category}}</ion-label>
             </ion-chip>
           </ion-slide>
@@ -18,4 +18,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <app-articles [news]="news"></app-articles>
 </ion-content>
