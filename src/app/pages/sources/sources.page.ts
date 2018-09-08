@@ -27,7 +27,7 @@ export class SourcesPage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'Added To Favorite.',
+      message: 'Added To Favorites.',
       duration: 2000
     });
     toast.present();
