@@ -20,7 +20,7 @@
     <ion-row *ngIf="sources">
       <ion-col size=12 size-md="6" *ngFor="let source of sources | search: term">
         <ion-list>
-          <ion-item color="light">
+          <ion-item color="light" href="/tabs/(sources:sources/{{source.id}})">
             <ion-label text-wrap>
               <ion-text>
                 <h2>{{source.name}} <ion-badge>{{source.category}}</ion-badge>
@@ -30,7 +30,7 @@
                 <p>{{source.description}}</p>
               </ion-text>
             </ion-label>
-            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+            <!-- <ion-icon name="arrow-forward" slot="end"></ion-icon> -->
           </ion-item>
         </ion-list>
       </ion-col>
