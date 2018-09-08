@@ -20,18 +20,23 @@
     <ion-row *ngIf="sources">
       <ion-col size=12 size-md="6" *ngFor="let source of sources | search: term">
         <ion-list>
-          <ion-item color="light" href="/tabs/(sources:sources/{{source.id}})">
-            <ion-label text-wrap>
-              <ion-text>
-                <h2>{{source.name}} <ion-badge>{{source.category}}</ion-badge>
-                </h2>
-              </ion-text>
-              <ion-text>
-                <p>{{source.description}}</p>
-              </ion-text>
-            </ion-label>
-            <!-- <ion-icon name="arrow-forward" slot="end"></ion-icon> -->
-          </ion-item>
+          <ion-item-sliding>
+            <ion-item color="light" href="/tabs/(sources:sources/{{source.id}})">
+              <ion-label text-wrap>
+                <ion-text>
+                  <h2>{{source.name}} <ion-badge>{{source.category}}</ion-badge>
+                  </h2>
+                </ion-text>
+                <ion-text>
+                  <p>{{source.description}}</p>
+                </ion-text>
+              </ion-label>
+              <!-- <ion-icon name="arrow-forward" slot="end"></ion-icon> -->
+            </ion-item>
+            <ion-item-options side="start">
+              <ion-item-option (click)="favorite(source)">Favorite</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
         </ion-list>
       </ion-col>
     </ion-row>

@@ -18,4 +18,8 @@ export class SourcesPage implements OnInit {
       this.sources = sources['sources'];
     });
   }
+
+  favorite(source) {
+    console.log(source);
+  }
 }
