@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ArticlesComponent implements OnInit {
   @Input()
   news;
+  fakeArticles = new Array(20);
 
   constructor() {}
 

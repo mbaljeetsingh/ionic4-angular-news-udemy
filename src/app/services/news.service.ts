@@ -29,12 +29,12 @@ export class NewsService {
   }
 
   getData(url) {
-    this.showLoading();
+    // this.showLoading();
     return this.http.get(`${apiUrl}/${url}`, { params }).pipe(
       tap(value => {
-        if (this.loading) {
-          this.loading.dismiss();
-        }
+        // if (this.loading) {
+        //   this.loading.dismiss();
+        // }
         console.log(value);
       })
     );
