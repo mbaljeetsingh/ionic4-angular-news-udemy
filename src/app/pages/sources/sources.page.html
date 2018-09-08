@@ -1,9 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>sources</ion-title>
+    <ion-title>Sources</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-grid fixed>
+    <ion-row *ngIf="!(sources | async)">
+      <ion-col size=12 *ngFor="let sources of fakeSources">
+        <ion-skeleton-text width="35%"></ion-skeleton-text>
+        <ion-skeleton-text width="70%"></ion-skeleton-text>
+        <ion-skeleton-text width="100%"></ion-skeleton-text>
+        <ion-skeleton-text width="80%"></ion-skeleton-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size=12 size-md="6" *ngFor="let source of (sources | async)?.sources">
+        <ion-list>
+          <ion-item color="light">
+            <ion-label text-wrap>
+              <ion-text>
+                <h2>{{source.name}} <ion-badge>{{source.category}}</ion-badge>
+                </h2>
+              </ion-text>
+              <ion-text>
+                <p>{{source.description}}</p>
+              </ion-text>
+            </ion-label>
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
