@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-source',
@@ -8,9 +9,14 @@ import { NewsService } from '../../services/news.service';
 })
 export class SourcePage implements OnInit {
   news;
-  constructor(private newsService: NewsService) {}
+  id;
+  constructor(
+    private newsService: NewsService,
+    private activedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.news = this.newsService.getData('everything?sources=abc-news');
+    this.id = this.activedRoute.snapshot.paramMap.get('id');
+    this.news = this.newsService.getData(`everything?sources=${this.id}`);
   }
 }
