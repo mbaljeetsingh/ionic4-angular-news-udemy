@@ -35,7 +35,7 @@ export class NewsService {
         // if (this.loading) {
         //   this.loading.dismiss();
         // }
-        console.log(value);
+        // console.log(value);
       })
     );
   }
