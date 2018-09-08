@@ -9,9 +9,13 @@ import { NewsService } from '../../services/news.service';
 export class SourcesPage implements OnInit {
   sources;
   fakeSources = new Array(20);
+  term = '';
   constructor(private newsService: NewsService) {}
 
   ngOnInit() {
-    this.sources = this.newsService.getData('sources');
+    // this.sources = this.newsService.getData('sources');
+    this.newsService.getData('sources').subscribe(sources => {
+      this.sources = sources['sources'];
+    });
   }
 }

@@ -2,11 +2,14 @@
   <ion-toolbar>
     <ion-title>Sources</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="term"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-grid fixed>
-    <ion-row *ngIf="!(sources | async)">
+    <ion-row *ngIf="!sources">
       <ion-col size=12 *ngFor="let sources of fakeSources">
         <ion-skeleton-text width="35%"></ion-skeleton-text>
         <ion-skeleton-text width="70%"></ion-skeleton-text>
@@ -14,8 +17,8 @@
         <ion-skeleton-text width="80%"></ion-skeleton-text>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size=12 size-md="6" *ngFor="let source of (sources | async)?.sources">
+    <ion-row *ngIf="sources">
+      <ion-col size=12 size-md="6" *ngFor="let source of sources | search: term">
         <ion-list>
           <ion-item color="light">
             <ion-label text-wrap>
