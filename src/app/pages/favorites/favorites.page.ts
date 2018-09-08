@@ -27,4 +27,10 @@ export class FavoritesPage implements OnInit {
   onRefresh() {
     this.getFavorites();
   }
+
+  Unfavorite(source) {
+    const index = this.sources.indexOf(source);
+    this.sources.splice(index, 1);
+    this.storage.set('favorite', JSON.stringify(this.sources));
+  }
 }
